@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { Router, ActivatedRoute, Route } from "@angular/router";
 
 @Component({
   selector: 'app-github-profile',
@@ -9,14 +9,20 @@ import { ActivatedRoute } from "@angular/router";
 
 export class GithubProfileComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private router: Router) { }
+
+  submit(){
+    this.router.navigate(["/followers"], {
+      queryParams: {page: 1, order: "newest"}
+    }).then(r => console.log(r));
+  }
 
   ngOnInit() {
   // If you are sure that the user will navigate away from you application
     // and then come back we need to use the method snapshot only when the user will
     // be going away from the page and come back later
-    let id = this.route.snapshot.paramMap.get("id");
-    console.log("id", id);
+  /*  let id = this.route.snapshot.paramMap.get("id");
+    console.log("id", id);*/
 
 
     // observables is a collection of asynchronous data that arrives at a certain time``
