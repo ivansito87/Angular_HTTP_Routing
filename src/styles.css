@@ -82,3 +82,8 @@ body { padding: 20px; }
 .btn-danger:hover {
   background: linear-gradient(#d43f3a, #c9302c);
 }
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #e0e6ff;
+    background-color: #af92c1;
+}
